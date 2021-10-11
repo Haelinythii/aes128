@@ -9,7 +9,7 @@
 #include "aes.h"
 
 #define PORT 8080
-#define BUFFER_SIZE 16
+#define BUFFER_SIZE 1024
 #define BLOCK_SIZE 16
 #define EXPANDED_KEY_SIZE 44
 #define KEY_PAIR_SIZE 2

@@ -9,7 +9,7 @@
 #include "aes.h"
 
 #define PORT 8080
-#define BUFFER_SIZE 16
+#define BUFFER_SIZE 1024
 #define BLOCK_SIZE 16
 #define EXPANDED_KEY_SIZE 44
 #define KEY_PAIR_SIZE 2
@@ -124,7 +124,7 @@ void sendEncryptedFileContent(int socket, uint8_t* fileContent, int size){
 }
 
 void sendFile(int socket, char* filename, uint8_t* uniqueKey){
-    send(socket, filename, strlen(filename), 0);
+    send(socket, filename, BUFFER_SIZE, 0);
 
     FILE * fp = fopen(filename, "rb");
 
